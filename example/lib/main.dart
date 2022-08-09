@@ -29,17 +29,17 @@ class _AppState extends State<App> {
             action = '${item.title} was selected';
           }),
           menuItems: [
-            MenuItem(title: 'First item'),
-            MenuItem(title: 'Second item'),
-            MenuItem(
+            NativeMenuItem(title: 'First item'),
+            NativeMenuItem(title: 'Second item'),
+            NativeMenuItem(
               title: 'Third item with submenu',
               items: [
-                MenuItem(title: 'First subitem'),
-                MenuItem(title: 'Second subitem'),
-                MenuItem(title: 'Third subitem'),
+                NativeMenuItem(title: 'First subitem'),
+                NativeMenuItem(title: 'Second subitem'),
+                NativeMenuItem(title: 'Third subitem'),
               ],
             ),
-            MenuItem(title: 'Fourth item'),
+            NativeMenuItem(title: 'Fourth item'),
           ],
           child: Card(
             child: Column(

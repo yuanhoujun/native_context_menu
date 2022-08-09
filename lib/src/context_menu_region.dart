@@ -14,9 +14,9 @@ class ContextMenuRegion extends StatefulWidget {
   }) : super(key: key);
 
   final Widget child;
-  final List<MenuItem> menuItems;
+  final List<NativeMenuItem> menuItems;
   final Offset menuOffset;
-  final void Function(MenuItem item)? onItemSelected;
+  final void Function(NativeMenuItem item)? onItemSelected;
   final VoidCallback? onDismissed;
 
   @override

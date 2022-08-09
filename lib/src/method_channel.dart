@@ -18,17 +18,17 @@ const String _kOnItemSelected = "onItemSelected";
 /// Called when menu is dismissed without clicking any item.
 const String _kOnMenuDismissed = "onMenuDismissed";
 
-class MenuItem {
-  MenuItem({
+class NativeMenuItem {
+  NativeMenuItem({
     required this.title,
     this.onSelected,
     this.action,
-    this.items = const <MenuItem>[],
+    this.items = const <NativeMenuItem>[],
   });
 
   late int _id;
   final String title;
-  final List<MenuItem> items;
+  final List<NativeMenuItem> items;
   final Object? action;
 
   final VoidCallback? onSelected;
@@ -53,7 +53,7 @@ class ShowMenuArgs {
 
   final double devicePixelRatio;
   final Offset position;
-  final List<MenuItem> items;
+  final List<NativeMenuItem> items;
 
   Map<String, dynamic> toJson() {
     return {
@@ -92,7 +92,7 @@ Completer<int?> _contextMenuCompleter = Completer<int?>();
 
 int _menuItemId = 0;
 
-Future<MenuItem?> showContextMenu(ShowMenuArgs args) async {
+Future<NativeMenuItem?> showContextMenu(ShowMenuArgs args) async {
   final menu = _buildMenu(args.items);
   _menuItemId = 0;
 
@@ -104,8 +104,8 @@ Future<MenuItem?> showContextMenu(ShowMenuArgs args) async {
   return menu[id];
 }
 
-Map<int, MenuItem> _buildMenu(List<MenuItem> items) {
-  final built = <int, MenuItem>{};
+Map<int, NativeMenuItem> _buildMenu(List<NativeMenuItem> items) {
+  final built = <int, NativeMenuItem>{};
 
   for (var item in items) {
     item._id = _menuItemId++;
